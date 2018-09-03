@@ -94,9 +94,9 @@ def test():
     # print(read(0))
     #
 
-    mark_completed(0)
-    mark_completed(1)
-    unmark_completed(0)
+    # mark_completed(0)
+    # mark_completed(1)
+    # unmark_completed(0)
     list_all_items()
     # select("C")
     # list_all_items()
