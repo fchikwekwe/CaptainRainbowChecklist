@@ -73,7 +73,7 @@ def select(function_code):
     elif function_code.lower() == "q":
         return False
     else:
-        print("***That did not quite work. Please stick to the letters on the list. Avoid any spaces or special characters. Upper or lowercase is fine. Please select a valid option below.***")
+        print("***That did not quite work. Please stick to the letter options given. Avoid any spaces or special characters. Upper or lowercase is fine. Please select a valid option below.***")
     return True
 
 def test():
@@ -83,26 +83,31 @@ def test():
     create("Green scarf")
     create("Blue suede shoes")
     create("Purple sox")
-
-    # print(read(0))
-    # print(read(1))
-
+    list_all_items()
     update(5, "Purple socks")
     #
+    # print(read(0))
+    # print(read(1))
     # destroy(1)
-    #
     # print(read(0))
     #
-
+    ## testing mark_completed function
     # mark_completed(0)
     # mark_completed(1)
-    # unmark_completed(0)
-    list_all_items()
+    #
+    # Testing IndexError exception
+    # read(101)
+    #
+    ## Testing ValueError exception
+    # update(cat, cat)
+    #
+    ## testing selection within select function
     # select("C")
     # list_all_items()
     # select("R")
     # list_all_items()
     #
+    ## testing to make sure user_input works properly
     # user_value = user_input("Please enter a value:")
     # print(user_value)
     # clear()
@@ -117,4 +122,6 @@ while running:
         clear()
         running = select(selection)
     except IndexError:
-        print(colored("Please try again. Select an index on the list. The list currently goes from 0 to {}.".format(len(checklist) - 1), "red"))
+        print(colored("Please try again. Select an index from the list. The list currently goes from 0 to {}.".format(len(checklist) - 1), "red"))
+    except ValueError:
+        print(colored("Please try again. Select a *numerical* index from the list. The list currently goes from 0 to {}.".format(len(checklist) - 1), "red"))
